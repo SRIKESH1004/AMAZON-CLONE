@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function searchProducts() {
+            var input = document.getElementById('searchInput').value.toLowerCase();
+            var products = document.getElementsByClassName('product');
+            for (var i = 0; i < products.length; i++) {
+                var title = products[i].getElementsByClassName('product-title')[0].innerText.toLowerCase();
+                products[i].style.display = title.includes(input) ? '' : 'none';
+            }
+        }
+        function toggleSidebar() {
+            var sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('collapsed');
+        }
+    </script>
+</head>
+<body>
+    <header class="amazon-header" role="banner">
+        <div class="header-left">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" class="amazon-logo" width="100" height="40">
+            <div class="header-address">
+                <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+                <span>Deliver to<br><strong>India</strong></span>
+            </div>
+        </div>
+        <form class="header-search" role="search" aria-label="Site Search" onsubmit="return false;">
+            <label for="searchInput" class="visually-hidden">Search Amazon.in</label>
+            <select class="search-category" aria-label="Search Category">
+                <option>All</option>
+                <option>Electronics</option>
+                <option>Fashion</option>
+                <option>Books</option>
+                <option>Home & Kitchen</option>
+            </select>
+            <input type="text" id="searchInput" placeholder="Search Amazon.in" onkeyup="searchProducts()">
+            <button class="search-btn" aria-label="Search"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+        <nav class="header-right" aria-label="User Navigation">
+            <div class="header-lang" title="Language">
+                <img src="https://flagcdn.com/in.svg" alt="India Flag" class="flag-icon"> EN
+            </div>
+            <div class="header-account">
+                <span>Hello, Sign in<br><strong>Account & Lists</strong></span>
+            </div>
+            <div class="header-orders">
+                <span>Returns<br><strong>& Orders</strong></span>
+            </div>
+            <div class="header-cart" aria-label="Shopping Cart">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span>Cart</span>
+            </div>
+        </nav>
+    </header>
+    <nav class="amazon-nav" aria-label="Main Navigation">
+        <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle Catalog"><i class="fa fa-bars"></i> All</button>
+        <a href="#">Amazon miniTV</a>
+        <a href="#">Sell</a>
+        <a href="#">Best Sellers</a>
+        <a href="#">Mobiles</a>
+        <a href="#">Today's Deals</a>
+        <a href="#">Customer Service</a>
+        <a href="#">Electronics</a>
+        <a href="#">Prime</a>
+        <a href="#">Fashion</a>
+        <a href="#">Home & Kitchen</a>
+        <a href="#">Amazon Pay</a>
+    </nav>
+    <section class="deals-banner" aria-label="Deals Banner">
+        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/GW/Sept/Unrec/PC-hero_3000._CB577032282_.jpg" alt="Fashion Deals Banner" width="1200" height="400">
+    </section>
+    <aside class="sidebar" aria-label="Catalog Sidebar">
+        <h3>Shop by Category</h3>
+        <ul>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Fashion</a></li>
+            <li><a href="#">Home & Kitchen</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Toys</a></li>
+        </ul>
+    </aside>
+    <main class="main-content" role="main">
+        <section class="products" aria-label="Product Listings">
+            <article class="product">
+                <span class="prime-badge" aria-label="Prime Eligible">Prime</span>
+                <img src="https://m.media-amazon.com/images/I/61ZbR1TgDHL._AC_UL320_.jpg" alt="boAt Rockerz 450 Bluetooth Headphones" width="180" height="180">
+                <h2 class="product-title">boAt Rockerz 450 Bluetooth Headphones</h2>
+                <div class="rating" aria-label="4.5 stars">
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i>
+                </div>
+                <div class="product-price">₹1,499</div>
+                <button>Add to Cart</button>
+            </article>
+            <article class="product">
+                <span class="prime-badge" aria-label="Prime Eligible">Prime</span>
+                <img src="https://m.media-amazon.com/images/I/71pC69I3lzL._AC_UL320_.jpg" alt="Fire-Boltt Ninja Call Pro Smart Watch" width="180" height="180">
+                <h2 class="product-title">Fire-Boltt Ninja Call Pro Smart Watch</h2>
+                <div class="rating" aria-label="5 stars">
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                </div>
+                <div class="product-price">₹1,299</div>
+                <button>Add to Cart</button>
+            </article>
+            <article class="product">
+                <span class="prime-badge" aria-label="Prime Eligible">Prime</span>
+                <img src="https://m.media-amazon.com/images/I/61u1VALn6JL._AC_UL320_.jpg" alt="JBL Go 3 Portable Speaker" width="180" height="180">
+                <h2 class="product-title">JBL Go 3 Portable Speaker</h2>
+                <div class="rating" aria-label="4.5 stars">
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i><i class="fa fa-star"></i>
+                </div>
+                <div class="product-price">₹2,499</div>
+                <button>Add to Cart</button>
+            </article>
+            <article class="product">
+                <span class="prime-badge" aria-label="Prime Eligible">Prime</span>
+                <img src="https://m.media-amazon.com/images/I/61ZbR1TgDHL._AC_UL320_.jpg" alt="Mi Smart Band 6" width="180" height="180">
+                <h2 class="product-title">Mi Smart Band 6</h2>
+                <div class="rating" aria-label="4.5 stars">
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i>
+                </div>
+                <div class="product-price">₹2,999</div>
+                <button>Add to Cart</button>
+            </article>
+        </section>
+    </main>
+    <footer class="amazon-footer" role="contentinfo">
+        <nav class="footer-columns" aria-label="Footer Navigation">
+            <div>
+                <h4>Get to Know Us</h4>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Press Releases</a>
+                <a href="#">Amazon Science</a>
+            </div>
+            <div>
+                <h4>Connect with Us</h4>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div>
+                <h4>Make Money with Us</h4>
+                <a href="#">Sell on Amazon</a>
+                <a href="#">Amazon Global Selling</a>
+                <a href="#">Become an Affiliate</a>
+                <a href="#">Advertise Your Products</a>
+            </div>
+            <div>
+                <h4>Let Us Help You</h4>
+                <a href="#">COVID-19 and Amazon</a>
+                <a href="#">Your Account</a>
+                <a href="#">Returns Centre</a>
+                <a href="#">Help</a>
+            </div>
+        </nav>
+        <div class="footer-bottom">&copy; 2025 Amazon Clone. Built for educational purposes.</div>
+    </footer>
+</body>
+</html>
